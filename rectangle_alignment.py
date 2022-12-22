@@ -25,7 +25,7 @@ for i, c in enumerate(contours):
     cy = int(M['m01']/M['m00'])
 
     cnt_norm = c - [cx, cy]
-
+    
     def cart2pol(x, y):
         theta = np.arctan2(y, x)
         rho = np.hypot(x, y)
@@ -37,7 +37,7 @@ for i, c in enumerate(contours):
         y = rho * np.sin(theta)
         return x, y
 
-
+    #Rotation
     def rotate_contour(c, angle):
         M = cv2.moments(c)
         cx = int(M['m10']/M['m00'])
